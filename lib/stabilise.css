@@ -1,0 +1,22 @@
+*,
+*::before,
+*::after {
+  animation-duration: 0s !important;
+  animation-delay: 0s !important;
+  animation-iteration-count: 1 !important;
+  transition: none !important;
+  caret-color: transparent !important;
+  scroll-behavior: auto !important;
+}
+
+/* Embla carousels (packages/ui Carousel) autoplay by moving the track and slides
+   with transform, and the AutoHeight plugin (carousel-block) resizes the track
+   to the active slide; pin them to their natural layout. */
+[aria-roledescription='carousel'] .overflow-hidden > div,
+[aria-roledescription='slide'] {
+  transform: none !important;
+}
+
+[aria-roledescription='carousel'] .overflow-hidden > div {
+  height: auto !important;
+}

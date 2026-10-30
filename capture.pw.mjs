@@ -58,6 +58,7 @@ for (const { key, path: pagePath } of pages) {
         const after = await side(config.after, 'after');
         const noise = config.noiseCheck ? await side(config.before, 'noise') : undefined;
         result.status = { before: before.status, after: after.status };
+        result.title = { before: before.title, after: after.title };
         Object.assign(result, await compareCaptures({ browser, before, after, noise }));
       } catch (error) {
         result.error = error instanceof Error ? error.message.split('\n')[0] : String(error);

@@ -37,10 +37,12 @@ vdiff --after http://localhost:3001
 
 ## Reading the report
 
-- Summary table per page and viewport: sections changed, style changes, new layout issues, new axe violations.
-- Per section: `changed`, `same`, `added`/`removed` (only on one side), or `noisy` (differed between two loads of the before URL, so not trustworthy).
-- Images: before, after, and a difference overlay (black = identical, bright = changed).
-- Style table: exact computed values per element, e.g. `h2:1 font-size 36px -> 30px`. Box values (`box.y`, `box.height`) are relative to the section.
+- Sidebar: every page and viewport with "sections changed / style changes" (orange dot = something changed). Overview is the summary table. On a phone the sidebar is a dropdown. Each page view has its own link (`report.html#p-home-mobile`).
+- Page view: page title, full before and after URLs, then sections in page order, named by their heading, with position and height. Changed sections start open; same and noisy ones are dimmed and closed.
+- Section states: `changed`, `same`, `added`/`removed` (only on one side), or `noisy` (differed between two loads of the before URL, so not trustworthy).
+- Screenshots: before and after; "Show difference" adds the overlay (black = identical, bright = changed). Click a screenshot for full screen, side by side, scrolling together; Esc closes.
+- Changes: repeated changes are grouped ("6 h3 elements: font-weight 600 -> 700"). "Every element" (closed) lists each element with its exact values, including position and size shifts (`box.y`, `box.height`, relative to the section), which are usually just knock-on effects.
+- Runs before 2026-10-30 have no page titles or recorded section positions; the report shows the path instead and estimates positions from screenshot heights ("about").
 
 ## Add a page
 
